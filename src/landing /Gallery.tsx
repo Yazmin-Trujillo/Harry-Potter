@@ -5,13 +5,13 @@ import './Gallery.scss';
 function Gallery() {
     return (
         <div className="gallery">
-            <img src='./images/Harry_Potter.png' className="titulo" alt="HarryPotter" />
-            <h4 className='subtitulo'>Selecciona tu filtro</h4>
-            <div className='contenedorBotonesCategoria'>
-                <button className='categoria'>ESTUDIANTES</button>
-                <button className='categoria'>STAFF</button>
+            <img src='./images/Harry_Potter.png' className="namePage" alt="HarryPotter" />
+            <h4 className='instructions'>Selecciona tu filtro</h4>
+            <div className='categoryButtonContainer'>
+                <button className='category'>ESTUDIANTES</button>
+                <button className='category'>STAFF</button>
             </div>
-            <main className='contenido'>
+            <main className='contents'>
                 <CharacterCard />
                 <CharacterCard />
             </main>
