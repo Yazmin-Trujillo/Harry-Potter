@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import Cards from './Cards ';
+import HarryPotter from './Harry_Potter.png';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src={HarryPotter} className="titulo" alt="HarryPotter" />
+      <h4 className='subtitulo'>Selecciona tu filtro</h4>
+      <div className='contenedorBotonesCategoria'>
+        <button className='categoria'>ESTUDIANTES</button>
+        <button className='categoria'>STAFF</button>
+      </div>
+      <Cards></Cards>
     </div>
   );
 }
