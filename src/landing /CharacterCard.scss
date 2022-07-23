@@ -1,0 +1,122 @@
+.characterCard {
+    /* width: 8.75rem; */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    border-radius: 0.313rem;
+    overflow: hidden;
+
+    .profileImage {
+        background: linear-gradient(90deg, #FF0000 4.67%, #FED482 96.97%);
+        height: 5.438rem;
+    }
+
+    .cardInformation {
+        background: white;
+        display: flex;
+        flex-direction: column-reverse;
+
+        .statusInformation {
+            display: flex;
+            padding: .5rem;
+
+            .statuses {
+                flex: 1;
+
+                h4 {
+                    font-size: 0.688rem;
+                    color: #999999;
+                    margin: 0;
+                }
+            }
+
+            .iconoRectangulo {}
+        }
+
+        .characterInformation {
+
+            .charactersName {
+                .name {
+                    margin-block-start: 0;
+                    margin-block-end: 0;
+                    text-align: center;
+                    font-family: Open Sans;
+                    font-size: 1.125rem;
+                    padding-top: 1.125rem;
+                    padding-bottom: 1.125rem;
+                }
+            }
+
+            .profile {
+                display: none;
+            }
+        }
+
+
+    }
+
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+        // background-image: url(../../public/images/Castle.png);
+        border-radius: 1rem;
+
+        .profileImage {
+            background: linear-gradient(180deg, #FF0000 4.67%, #FED482 96.97%);
+            width: 40%;
+            height: auto;
+        }
+
+        .cardInformation {
+            flex: 1 1 0;
+            flex-direction: column;
+
+            .statusInformation {
+                display: flex;
+                justify-content: space-between;
+                margin: 1rem;
+                padding: 0;
+
+                .statuses {
+                    align-self: center;
+
+                    h4 {
+                        font-family: Open Sans;
+                        font-size: 0.875;
+                    }
+                }
+
+                .iconoRectangulo {
+                    align-self: center;
+                    height: 1.375rem;
+                }
+            }
+
+            .characterInformation {
+                margin: 0 1rem 1rem 1rem;
+
+                .charactersName {
+                    margin: 0;
+
+
+                    .name {
+                        text-align: start;
+                        padding-top: 0;
+                    }
+                }
+
+                .profile {
+                    display: inherit;
+
+                    h5 {
+                        margin-top: .5rem;
+                        margin-bottom: .5rem;
+
+                    }
+                }
+            }
+        }
+
+
+    }
+}
