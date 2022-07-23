@@ -1,16 +1,16 @@
 import React from 'react';
-import './CharacterCard.css';
+import './CharacterCard.scss';
 
 function CharacterCard() {
     return (
-        <article className='tarjeta'>
-            <div className='perfil'>
-                <img src='image' className="imagenPerfil" alt="ImagenDePerfil" />
+        <article className='characterCard'>
+            <div className='profile'>
+                <img src='image' className="profileImage" alt="profileImage" />
             </div>
-            <section className='informaciónTarjeta'>
-                <h1 className='nombrePersonaje'>Harry Potter</h1>
-                <div className='contenidoTarjeta'>
-                    <div className='estados'>
+            <section className='cardInformation'>
+                <h1 className='charactersName'>Harry Potter</h1>
+                <div className='cardContent'>
+                    <div className='statuses'>
                         <h4>VIVO</h4>
                         <h4>ESTUDIANTE</h4>
                     </div>

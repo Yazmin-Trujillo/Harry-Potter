@@ -1,6 +1,6 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
-import './Gallery.css';
+import './Gallery.scss';
 
 function Gallery() {
     return (

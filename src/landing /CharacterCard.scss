@@ -1,0 +1,47 @@
+.characterCard {
+    /* width: 8.75rem; */
+    margin: auto;
+    width: 100%;
+    border-radius: 0.313rem;
+
+    .profile {
+        background: linear-gradient(90deg, #FF0000 4.67%, #FED482 96.97%);
+        border-top-left-radius: 0.313rem;
+        border-top-right-radius: 0.313rem;
+        height: 5.438rem;
+    }
+
+    .cardInformation {
+        background: white;
+        border-bottom-left-radius: 0.313rem;
+        border-bottom-right-radius: 0.313rem;
+
+        .charactersName {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            text-align: center;
+            font-family: Open Sans;
+            font-size: 1.125rem;
+            padding-top: 1.125rem;
+            padding-bottom: 1.125rem;
+        }
+
+        .cardContent {
+            display: flex;
+            padding: .5rem;
+
+            .statuses {
+                flex: 1;
+
+                h4 {
+                    font-size: 0.688rem;
+                    color: #999999;
+                    margin: 0;
+                }
+            }
+        }
+
+    }
+
+
+}
