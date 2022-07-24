@@ -1,12 +1,26 @@
 import React from 'react';
+import { Character } from '../services/DataService';
 import './CharacterCard.scss';
 
-function CharacterCard() {
+type Props = {
+    character: Character
+}
+
+function CharacterCard({ character }: Props) {
+
+    const string = " ";
+
+    function capitalizarPrimeraLetra(str: string) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    capitalizarPrimeraLetra(string); // Retorna "FreeCodecamp"
+    
     return (
         <article className='characterCard'>
 
             <div className='profileImage'>
-                <img src='image' className="profileImage" alt="profileImage" />
+                <img src= {character.image} className="image" alt="profileImage" />
             </div>
 
             <section className='cardInformation'>
@@ -22,13 +36,13 @@ function CharacterCard() {
 
                 <div className='characterInformation'>
                     <div className='charactersName'>
-                        <h1 className='name'>Harry Potter</h1>
+                        <h1 className='name'>{character.name}</h1>
                     </div>
                     <div className='profile'>
-                        <h5>Cumpleaños:</h5>
-                        <h5>Género:</h5>
-                        <h5>Color de ojos:</h5>
-                        <h5>Color de pelo:</h5>
+                        <p><span className='fontBold'>Cumpleaños:</span> {character.dateOfBirth}</p>
+                        <p><span className='fontBold'>Género:</span> {capitalizarPrimeraLetra(character.gender)}</p>
+                        <p><span className='fontBold'>Color de ojos:</span> {capitalizarPrimeraLetra(character.eyeColour)}</p>
+                        <p><span className='fontBold'>Color de pelo:</span> {capitalizarPrimeraLetra(character.hairColour)}</p>
                     </div>
                 </div>
                 {/* <h1 className='nombrePersonaje'>name del personaje</h1>
@@ -41,15 +55,3 @@ function CharacterCard() {
 }
 
 export default CharacterCard;
-
-{/* <h1 className='charactersName'>Harry Potter</h1>
-                <div className='cardContent'>
-                    <div className='statuses'>
-                        <h4>VIVO</h4>
-                        <h4>ESTUDIANTE</h4>
-                    </div>
-                    <div>
-                        <img src='./images/Rectangle.png' className="iconoRectangulo" alt="iconoRectangulo" />
-                    </div>
-                </div> */}
-

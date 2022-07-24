@@ -1,6 +1,7 @@
-/* .App {
-  background-color: black;
-} */
 body {
   background-color: black;
+
+  @media only screen and (min-width: 1024px) {
+    background-image: url("/Castle.png");
+  }
 }
