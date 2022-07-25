@@ -46,8 +46,8 @@ function Gallery() {
             <img src='./images/Harry_Potter.png' className="namePage" alt="HarryPotter" />
             <h4 className='instructions'>Selecciona tu filtro</h4>
             <div className='categoryButtonContainer'>
-                <button className='category' onClick={studentsFilter} >ESTUDIANTES</button>
-                <button className='category' onClick={staffFilter}>STAFF</button>
+                <button className={'category '+studentsToggle} onClick={studentsFilter} >ESTUDIANTES</button>
+                <button className={'category '+staffToggle} onClick={staffFilter}>STAFF</button>
             </div>
             <main className='contents'>
                 {characters.map((character) => {
