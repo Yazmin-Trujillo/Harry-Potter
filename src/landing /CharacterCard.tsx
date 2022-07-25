@@ -43,9 +43,7 @@ function CharacterCard({ character }: Props) {
                         <p><span className='fontBold'>Color de pelo:</span> {uppercaseFirstLetter(character.hairColour)}</p>
                     </div>
                 </div>
-                {/* <h1 className='nombrePersonaje'>name del personaje</h1>
-                <h4>alive si es true retornar vivo sino finado</h4>
-                <h4>hogwartsStudent:true retornar estudiante, hogwartsStaff:true retornar staff</h4> */}
+
             </section>
         </article >
 
