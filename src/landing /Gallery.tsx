@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Character, dataService } from '../services/DataService';
+import { AddCharacter } from './AddCharacter';
 import CharacterCard from './CharacterCard';
 import './Gallery.scss';
 
@@ -57,6 +58,10 @@ function Gallery() {
                     return <CharacterCard key={character.name} character={character} />
                 })}
             </main>
+            <div>
+                <button>AGREGAR</button>
+                <AddCharacter/>
+            </div>
         </div>
     );
 }
