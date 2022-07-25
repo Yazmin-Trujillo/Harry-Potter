@@ -1,3 +1,7 @@
+.fontBold {
+    font-weight: bold;
+}
+
 .characterCard {
     /* width: 8.75rem; */
     display: flex;
@@ -6,16 +10,52 @@
     width: 100%;
     border-radius: 0.313rem;
     overflow: hidden;
+    font-family: Open Sans;
+    height: 100%;
 
     .profileImage {
-        background: linear-gradient(90deg, #FF0000 4.67%, #FED482 96.97%);
-        height: 5.438rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(90deg, #4534df 4.67%, #6B63B5 96.97%);
+
+        &.Gryffindor {
+            background: linear-gradient(90deg, #FF0000 4.67%, #FED482 96.97%);
+        }
+
+        &.Slytherin {
+            background: linear-gradient(90deg, #1C792B 0%, #82E95E 100%);
+        }
+
+        &.Hufflepuff {
+            background: linear-gradient(90deg, #FFC700 0%, #FFF388 100%);
+        }
+
+        &.Ravenclaw {
+            background: linear-gradient(90deg, #0597B7 0%, #66D1FF 100%);
+        }
+
+        .image {
+            object-fit: cover;
+            object-position: top;
+            width: 4rem;
+            height: 4rem;
+            margin: 0.5rem 0;
+            border-radius: 50%;
+
+        }
     }
 
     .cardInformation {
         background: white;
         display: flex;
         flex-direction: column-reverse;
+        flex: 1 1 0;
+        justify-content: space-between;
+
+        &.false {
+            background: #CCCCCC;
+        }
 
         .statusInformation {
             display: flex;
@@ -24,10 +64,19 @@
             .statuses {
                 flex: 1;
 
+                .dead {
+                    display: none;
+                }
+
                 h4 {
                     font-size: 0.688rem;
                     color: #999999;
                     margin: 0;
+                    padding: 0.1rem 0;
+
+                    &.separator {
+                        display: none;
+                    }
                 }
             }
 
@@ -50,6 +99,16 @@
 
             .profile {
                 display: none;
+                font-size: 0.875rem;
+
+                p {
+                    color: #565353;
+                    margin: 0.438rem 0;
+
+                    span {
+                        color: black;
+                    }
+                }
             }
         }
 
@@ -62,9 +121,31 @@
         border-radius: 1rem;
 
         .profileImage {
-            background: linear-gradient(180deg, #FF0000 4.67%, #FED482 96.97%);
             width: 40%;
-            height: auto;
+            align-items: center;
+            background: linear-gradient(135deg, #4534df 4.67%, #6B63B5 96.97%);
+
+            &.Gryffindor {
+                background: linear-gradient(135deg, #FF0000 4.67%, #FED482 96.97%);
+            }
+
+            &.Slytherin {
+                background: linear-gradient(135deg, #1C792B 0%, #82E95E 100%);
+            }
+
+            &.Hufflepuff {
+                background: linear-gradient(135deg, #FFC700 0%, #FFF388 100%);
+            }
+
+            &.Ravenclaw {
+                background: linear-gradient(135deg, #0597B7 0%, #66D1FF 100%);
+            }
+
+            .image {
+                width: 7rem;
+                height: 7rem;
+                // margin: 1rem 0;
+            }
         }
 
         .cardInformation {
@@ -79,11 +160,19 @@
 
                 .statuses {
                     align-self: center;
+                    display: flex;
 
                     h4 {
                         font-family: Open Sans;
                         font-size: 0.875;
+
+                        &.separator {
+                            display: flex;
+                            padding-left: 0.3rem;
+                            padding-right: 0.3rem;
+                        }
                     }
+
                 }
 
                 .iconoRectangulo {
@@ -98,21 +187,17 @@
                 .charactersName {
                     margin: 0;
 
-
                     .name {
                         text-align: start;
                         padding-top: 0;
+                        font-size: 1.4rem;
+
                     }
                 }
 
                 .profile {
                     display: inherit;
 
-                    h5 {
-                        margin-top: .5rem;
-                        margin-bottom: .5rem;
-
-                    }
                 }
             }
         }
