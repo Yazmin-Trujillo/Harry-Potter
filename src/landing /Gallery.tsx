@@ -6,8 +6,8 @@ import './Gallery.scss';
 function Gallery() {
     const [allCharacters, setAllCharacters] = useState<Character[]>([]);
     const [characters, setCharacters] = useState<Character[]>([]);
-    const [studentsToggle, setStudentsToggle] = useState(true);
-    const [staffToggle, setStaffToggle] = useState(true)
+    const [studentsToggle, setStudentsToggle] = useState(false);
+    const [staffToggle, setStaffToggle] = useState(false)
 
     useEffect(() => {
         readCharacters()
@@ -20,25 +20,28 @@ function Gallery() {
     }
 
     async function studentsFilter() {
-        setStaffToggle(true)
-        setStudentsToggle(!studentsToggle)
-        if (studentsToggle === true) {
+        if (studentsToggle) {
+            setCharacters(allCharacters)
+        } else {
             const students = allCharacters.filter(character => character.hogwartsStudent === true)
             setCharacters(students)
-        } else {
-            setCharacters(allCharacters)
         }
+
+        setStaffToggle(false)
+        setStudentsToggle(!studentsToggle)
     }
 
     async function staffFilter() {
-        setStudentsToggle(true)
-        setStaffToggle(!staffToggle)
-        if (staffToggle === true) {
+
+        if (staffToggle) {
+            setCharacters(allCharacters)
+        } else {
             const staff = allCharacters.filter(character => character.hogwartsStaff === true)
             setCharacters(staff)
-        } else {
-            setCharacters(allCharacters)
         }
+
+        setStudentsToggle(false)
+        setStaffToggle(!staffToggle)
     }
 
     return (
@@ -46,8 +49,8 @@ function Gallery() {
             <img src='./images/Harry_Potter.png' className="namePage" alt="HarryPotter" />
             <h4 className='instructions'>Selecciona tu filtro</h4>
             <div className='categoryButtonContainer'>
-                <button className={'category ' + studentsToggle} onClick={studentsFilter} >ESTUDIANTES</button>
-                <button className={'category ' + staffToggle} onClick={staffFilter}>STAFF</button>
+                <button className={`category ${studentsToggle ? 'selected' : ''}`} onClick={studentsFilter} >ESTUDIANTES</button>
+                <button className={`category ${staffToggle ? 'selected' : ''}`} onClick={staffFilter}>STAFF</button>
             </div>
             <main className='contents'>
                 {characters.map((character) => {
