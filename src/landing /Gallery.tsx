@@ -47,7 +47,7 @@ function Gallery() {
 
     return (
         <div className="gallery">
-            <img src='./images/Harry_Potter.png' className="namePage" alt="HarryPotter" />
+            <img className="namePage" src='./images/Harry_Potter.png'  alt="HarryPotter" />
             <h4 className='instructions'>Selecciona tu filtro</h4>
             <div className='categoryButtonContainer'>
                 <button className={`category ${studentsToggle ? 'selected' : ''}`} onClick={studentsFilter} >ESTUDIANTES</button>
@@ -58,9 +58,9 @@ function Gallery() {
                     return <CharacterCard key={character.name} character={character} />
                 })}
             </main>
-            <div>
-                <button>AGREGAR</button>
-                <AddCharacter/>
+            <div className='fixedBox'>
+                <button className='extra'>FAVORITOS<img className='image' src='./images/RectangleW.png' alt="favorite" /></button>
+                <button className='extra'>AGREGAR<img className='image' src='./images/addUserW.png' alt="addUser" /></button>
             </div>
         </div>
     );
