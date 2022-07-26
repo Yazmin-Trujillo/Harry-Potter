@@ -9,10 +9,19 @@ function Gallery() {
     const [characters, setCharacters] = useState<Character[]>([]);
     const [studentsToggle, setStudentsToggle] = useState(false);
     const [staffToggle, setStaffToggle] = useState(false)
+    const [showAddCharacter, setShowAddCharacter] = useState<boolean>(false);
 
     useEffect(() => {
         readCharacters()
     }, []);
+
+    function onAddCharacterClose() {
+        setShowAddCharacter(false)
+    }
+
+    function onAddCharacterOpen() {
+        setShowAddCharacter(true)
+    }
 
     async function readCharacters() {
         const res = await dataService.getCharacters();
@@ -46,23 +55,26 @@ function Gallery() {
     }
 
     return (
-        <div className="gallery">
-            <img className="namePage" src='./images/Harry_Potter.png'  alt="HarryPotter" />
-            <h4 className='instructions'>Selecciona tu filtro</h4>
-            <div className='categoryButtonContainer'>
-                <button className={`category ${studentsToggle ? 'selected' : ''}`} onClick={studentsFilter} >ESTUDIANTES</button>
-                <button className={`category ${staffToggle ? 'selected' : ''}`} onClick={staffFilter}>STAFF</button>
+        <>
+            <div className={`gallery ${showAddCharacter ? "invisible" : ""}`}>
+                <img className="namePage" src='./images/Harry_Potter.png' alt="HarryPotter" />
+                <h4 className='instructions'>Selecciona tu filtro</h4>
+                <div className='categoryButtonContainer'>
+                    <button className={`category ${studentsToggle ? 'selected' : ''}`} onClick={studentsFilter} >ESTUDIANTES</button>
+                    <button className={`category ${staffToggle ? 'selected' : ''}`} onClick={staffFilter}>STAFF</button>
+                </div>
+                <main className='contents'>
+                    {characters.map((character) => {
+                        return <CharacterCard key={character.name} character={character} />
+                    })}
+                </main>
+                <div className='fixedBox'>
+                    <button className='extra'>FAVORITOS<img className='image' src='./images/RectangleW.png' alt="favorite" /></button>
+                    <button className='extra' onClick={onAddCharacterOpen}>AGREGAR<img className='image' src='./images/addUserW.png' alt="addUser" /></button>
+                </div>
             </div>
-            <main className='contents'>
-                {characters.map((character) => {
-                    return <CharacterCard key={character.name} character={character} />
-                })}
-            </main>
-            <div className='fixedBox'>
-                <button className='extra'>FAVORITOS<img className='image' src='./images/RectangleW.png' alt="favorite" /></button>
-                <button className='extra'>AGREGAR<img className='image' src='./images/addUserW.png' alt="addUser" /></button>
-            </div>
-        </div>
+            {showAddCharacter ? <AddCharacter  onClose={onAddCharacterClose} onSave={readCharacters}/> : ''}
+        </>
     );
 }
 
