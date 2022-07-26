@@ -1,0 +1,100 @@
+.fixedBox {
+    position: fixed;
+    z-index: 3;
+    bottom: 0px;
+    left: 10%;
+    width: 80%;
+    height: 2.25rem;
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    .extra {
+        width: 100%;
+        height: 100%;
+        background: #6B63B5;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .image {
+            margin-left: 0.5rem;
+        }
+    }
+}
+
+.favoritesContainer {
+    position: fixed;
+    background: #6B63B5;
+    z-index: 2;
+    bottom: 25px;
+    left: 10%;
+    width: 80%;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 10px 0;
+
+    .favorite {
+        display: flex;
+        width: 100%;
+        padding: 0.5rem;
+        align-items: center;
+
+        .sectionOne {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            .image {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+            }
+
+            .name {}
+        }
+
+        .sectionTwo {
+            margin-right: 0.5rem;
+
+            .trashImage {}
+        }
+    }
+
+    .default {
+        color: white;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .fixedBox {
+        top: 0px;
+        right: 10%;
+        left: inherit;
+        border-radius: 0 0 15px 15px;
+        width: 30%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .favoritesContainer {
+        top: 25px;
+        right: 10%;
+        width: 30%;
+        left: inherit;
+        bottom: inherit;
+        border-radius: 0 0 15px 15px;
+
+    }
+}

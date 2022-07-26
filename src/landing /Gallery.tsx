@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Character, dataService } from '../services/DataService';
+import { ActionBar } from './ActionBar';
 import { AddCharacter } from './AddCharacter';
 import CharacterCard from './CharacterCard';
 import './Gallery.scss';
@@ -57,6 +58,7 @@ function Gallery() {
     return (
         <>
             <div className={`gallery ${showAddCharacter ? "invisible" : ""}`}>
+            {/* <div className='gallery'> */}
                 <img className="namePage" src='./images/Harry_Potter.png' alt="HarryPotter" />
                 <h4 className='instructions'>Selecciona tu filtro</h4>
                 <div className='categoryButtonContainer'>
@@ -68,11 +70,8 @@ function Gallery() {
                         return <CharacterCard key={character.name} character={character} />
                     })}
                 </main>
-                <div className='fixedBox'>
-                    <button className='extra'>FAVORITOS<img className='image' src='./images/RectangleW.png' alt="favorite" /></button>
-                    <button className='extra' onClick={onAddCharacterOpen}>AGREGAR<img className='image' src='./images/addUserW.png' alt="addUser" /></button>
-                </div>
             </div>
+            <ActionBar onClick={onAddCharacterOpen} />
             {showAddCharacter ? <AddCharacter  onClose={onAddCharacterClose} onSave={readCharacters}/> : ''}
         </>
     );
