@@ -571,7 +571,7 @@
       "hogwartsStaff": false,
       "actor": "Yazmin Trujillo",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/harry.jpg"
+      "image": ""
     }
   ]
 }

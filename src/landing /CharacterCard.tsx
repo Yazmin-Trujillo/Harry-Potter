@@ -16,7 +16,7 @@ function CharacterCard({ character }: Props) {
         <article className='characterCard'>
 
             <div className={'profileImage ' + character.house}>
-                <img src={character.image} className="image" alt="profileImage" />
+                <img src={character.image ? character.image :'./images/newUser.png'} className="image" alt="profileImage" />
             </div>
 
             <section className={'cardInformation ' + character.alive}>
