@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import './ActionBar.scss';
+import { AddCharacter } from './AddCharacter';
 
 type Props = {
-    onClick: () => void
+    onSave: () => void
 }
-export function ActionBar({ onClick }: Props) {
-    const [favorites, setFavorites] = useState([1])
 
+export function ActionBar({onSave}: Props) {
+    const [favorites, setFavorites] = useState([1])
+    const [showAddCharacter, setShowAddCharacter] = useState<boolean>(false);
+
+    function onAddCharacterClose() {
+        setShowAddCharacter(false)
+    }
+
+    function onAddCharacterOpen() {
+        setShowAddCharacter(true)
+    }
     return (
         <>
             <div className='fixedBox'>
                 <button className='extra'>FAVORITOS<img className='image' src='./images/RectangleW.png' alt="favorite" /></button>
-                <button className='extra' onClick={onClick}>AGREGAR<img className='image' src='./images/addUserW.png' alt="addUser" /></button>
+                <button className='extra' onClick={onAddCharacterOpen}>AGREGAR<img className='image' src='./images/addUserW.png' alt="addUser" /></button>
             </div>
             <div className='favoritesContainer'>
                 {(favorites.length !== 0) ?
@@ -31,7 +41,7 @@ export function ActionBar({ onClick }: Props) {
                         <p className='xxx'>Agrega un personaje</p>
                     </div>}
             </div>
-
+            {showAddCharacter ? <AddCharacter  onClose={onAddCharacterClose} onSave={onSave}/> : ''}
         </>
 
     )
