@@ -6,9 +6,18 @@ type Props = {
     onSave: () => void
 }
 
-export function ActionBar({onSave}: Props) {
+export function ActionBar({ onSave }: Props) {
     const [favorites, setFavorites] = useState([1])
     const [showAddCharacter, setShowAddCharacter] = useState<boolean>(false);
+    const [showFavorites, setShowFavorites] = useState('')
+
+    function displayFavorites() {
+       setShowFavorites('')
+    }
+
+    function closeFavorites(){
+        console.log('click dado fuera de favoritos cambia el estado')
+    }
 
     function onAddCharacterClose() {
         setShowAddCharacter(false)
@@ -20,7 +29,7 @@ export function ActionBar({onSave}: Props) {
     return (
         <>
             <div className='fixedBox'>
-                <button className='extra'>FAVORITOS<img className='image' src='./images/RectangleW.png' alt="favorite" /></button>
+                <button className='extra' onClick={displayFavorites}>FAVORITOS<img className='image' src='./images/RectangleW.png' alt="favorite" /></button>
                 <button className='extra' onClick={onAddCharacterOpen}>AGREGAR<img className='image' src='./images/addUserW.png' alt="addUser" /></button>
             </div>
             <div className='favoritesContainer'>
@@ -41,7 +50,7 @@ export function ActionBar({onSave}: Props) {
                         <p className='xxx'>Agrega un personaje</p>
                     </div>}
             </div>
-            {showAddCharacter ? <AddCharacter  onClose={onAddCharacterClose} onSave={onSave}/> : ''}
+            {showAddCharacter ? <AddCharacter onClose={onAddCharacterClose} onSave={onSave} /> : ''}
         </>
 
     )
