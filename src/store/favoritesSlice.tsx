@@ -83,12 +83,17 @@ export const favoritesSlice = createSlice({
     reducers: {
         add: (state, action: PayloadAction<Character>) => {
             const current = [...state.value]
-            console.log('objeto',current)
-            current.push(action.payload)
-            state.value = current
-            
+            const result = current.filter(x => x.name == action.payload.name);
+
+            if (result.length === 0 && current.length < 5) {
+                current.push(action.payload)
+                state.value = current
+            } else {
+                return
+            }
+
         }
-       
+
     },
 })
 

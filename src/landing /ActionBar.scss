@@ -26,7 +26,7 @@
     }
 }
 
-.favoritesContainer {
+.favoritePanel {
     position: fixed;
     background: #6B63B5;
     z-index: 2;
@@ -39,6 +39,10 @@
     color: white;
     padding: 10px 10px;
     box-sizing: border-box;
+
+    &.show {
+        display: inherit;
+    }
 
     .favorite {
         display: flex;
@@ -91,7 +95,7 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
 
-    .favoritesContainer {
+    .favoritePanel{
         top: 25px;
         right: 10%;
         width: 30%;
