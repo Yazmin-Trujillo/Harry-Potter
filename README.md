@@ -4,7 +4,7 @@
 
 Proyecto [Harry Potter](https://github.com/Yazmin-Trujillo/harry-potter). El enlace anterior te lleva al repositorio en Git Hub\
 
-Para poder ver la página web en el navegador se tienen que abrir dos terminales en el proyecto, en uno se correra la app (npm start) y en el otro el servidor mock (json-server --watch characters.json --port 3004)
+Para poder ver la página web en el navegador se tienen que abrir dos terminales en el proyecto, en uno se correra la app (npm start) y en el otro el servidor mock (json-server --watch characters.json --port 3001)
 
 El tamaño para celular lo tengo en width: 320px
 El tamaño para escritorio está en min-width: 1024px
@@ -24,7 +24,7 @@ Abre [http://localhost:3000](http://localhost:3000) para ver el proyecto en el n
 Cada vez que haya cambios se actualizará la página.\
 En la consola del navegador se verán errores.
 
-### `json-server --watch characters.json --port 3004` 
+### `json-server --watch characters.json --port 3001` 
 
 Corres el servidor para ver los datos de la app
 
