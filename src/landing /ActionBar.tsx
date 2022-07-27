@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import './ActionBar.scss';
 import { AddCharacter } from './AddCharacter';
+import { useAppSelector } from '../../src/store/hooks'
 
 type Props = {
     onSave: () => void
 }
 
 export function ActionBar({ onSave }: Props) {
-    const [favorites, setFavorites] = useState([1])
     const [showAddCharacter, setShowAddCharacter] = useState<boolean>(false);
     const [showFavorites, setShowFavorites] = useState('')
+    const favorites = useAppSelector((state) => state.favorites.value)
+
 
     function displayFavorites() {
-       setShowFavorites('')
+        setShowFavorites('')
     }
 
-    function closeFavorites(){
+    function closeFavorites() {
         console.log('click dado fuera de favoritos cambia el estado')
     }
 
@@ -34,17 +36,19 @@ export function ActionBar({ onSave }: Props) {
             </div>
             <div className='favoritesContainer'>
                 {(favorites.length !== 0) ?
-                    <div className='favorite'>
-                        <div className='sectionOne'>
-                            {/* <img src={'character.image'} className="image" alt="profileImage" /> */}
-                            <img className="image" src='./images/newUser.png' alt="profileImage" />
-                            <span className='name'>{'character.name'}</span>
-                        </div>
-                        <div className='sectionTwo'>
-                            <img className='trashImage' src='./images/trash.png' alt="delete" />
-                            {/* <button className='delete'><img className='trashImage' src='./images/trash.png' alt="delete" /></button> */}
-                        </div>
-                    </div>
+                    favorites.map((favorite) => {
+                        return (
+                            <div className='favorite' key={favorite.name}>
+                                <div className='sectionOne'>
+                                    <img src={favorite.image} className="image" alt="profileImage" />
+                                    <span className='name'>{favorite.name}</span>
+                                </div>
+                                <div className='sectionTwo'>
+                                    <img className='trashImage' src='./images/trash.png' alt="delete" />
+                                </div>
+                            </div>
+                        )
+                    })
                     :
                     <div className='default'>
                         <p className='xxx'>Agrega un personaje</p>

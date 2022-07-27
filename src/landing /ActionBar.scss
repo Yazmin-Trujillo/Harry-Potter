@@ -35,16 +35,19 @@
     width: 80%;
     border-radius: 15px 15px 0 0;
     overflow: hidden;
-    display: flex;
     align-items: center;
     color: white;
-    padding: 10px 0;
+    padding: 10px 10px;
+    box-sizing: border-box;
 
     .favorite {
         display: flex;
-        width: 100%;
         padding: 0.5rem;
         align-items: center;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+        }
 
         .sectionOne {
             flex: 1;
