@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { dataService } from '../services/DataService';
 import './AddCharacter.scss';
 
@@ -32,12 +32,12 @@ export function AddCharacter({ onClose, onSave }: Props) {
         onClose()
     }
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: {target:{name:string, value:string}}) => {
         const { name, value } = e.target
         setValues({ ...values, [name]: value })
     }
 
-    const handleChangeBoolean = (e: any) => {
+    const handleChangeBoolean = (e: {target:{ value:string}}) => {
         const { value } = e.target
 
         if (value === 'hogwartsStudent') {
@@ -47,7 +47,7 @@ export function AddCharacter({ onClose, onSave }: Props) {
         }
     }
 
-    const handleSubmit = (event: any) => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         save()
     }
