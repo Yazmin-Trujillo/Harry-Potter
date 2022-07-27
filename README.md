@@ -1,15 +1,11 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/220cbb48-f7f7-440d-a4d3-a8c8ae3994c7/deploy-status)](https://app.netlify.com/sites/yaz-harry/deploys)
-
 # Harry Potter
 
 Proyecto [Harry Potter](https://github.com/Yazmin-Trujillo/harry-potter). El enlace anterior te lleva al repositorio en Git Hub\
 
-Para poder ver la página web en el navegador se tienen que abrir dos terminales en el proyecto, en uno se correra la app (npm start) y en el otro el servidor mock (json-server --watch characters.json --port 3001)
-
-El tamaño para celular lo tengo en width: 320px
+El tamaño para celular está enfocado para 320px de ancho.\
 El tamaño para escritorio está en min-width: 1024px
 
-La aplicación está despligada en [netlify](https://deploy-preview-6--yaz-harry.netlify.app/). 
+La aplicación está despligada en [Heroku](https://yaz-harry.herokuapp.com). 
 
 ---
 ## Scripts válidos
@@ -18,19 +14,20 @@ En éste proyecto tu puedes correr los siguiente Scripts:
 
 ### `npm start`
 
-Corres la app en modo desarrollo.\
-Abre [http://localhost:3000](http://localhost:3000) para ver el proyecto en el navegador
+Corre la app en modo desarrollo.\
+Corre un servidor mock mediante `json-server` en el puerto 3001, a la vez de la aplicación en el puerto 3000.
+
+Abre [http://localhost:3000](http://localhost:3000) para ver el proyecto en el navegador.
 
 Cada vez que haya cambios se actualizará la página.\
 En la consola del navegador se verán errores.
 
-### `json-server --watch characters.json --port 3001` 
-
-Corres el servidor para ver los datos de la app
-
-### `npm test`
-
 ### `npm run build`
+
+## Deploy
+
+El repositorio tiene la configuración requerido para hacer deploys a [Heroku](https://www.heroku.com/). Como referencia mira los archivos `server.js` y `Procfile` así como la documentación de Heroku.
+Ésta configuración está basada en el tutorial [Desplegar una demo con una API JSON en Heroku](https://blog-es.mimacom.com/deploy-demo-with-api-heroku/).
 
 ---
 
@@ -38,8 +35,10 @@ Corres el servidor para ver los datos de la app
 
 ### ¿Qué es lo que más te gustó de tu desarrollo?
 
-Reforzar lo que he aprendido hasta ahora y agregarle nuevos conocimientos.
-Ademas que me gusta ver que se parece a lo que se me pidió y funciona!
++ Reforzar lo que he aprendido hasta ahora y agregarle nuevos conocimientos.
++ El despliegue con Heroku de los archivos estáticos junto con un servidor REST mediante json-server.
++ Usar SASS por primera vez, simplifica el trabajo con estilos
++ El resultado: me gusta ver que se parece a lo que se me pidió y funciona!
 
 ### Si hubieras tenido más tiempo ¿qué hubieras mejorado o qué más hubieras hecho?
 
