@@ -6,6 +6,12 @@ Proyecto [Harry Potter](https://github.com/Yazmin-Trujillo/harry-potter). El enl
 
 Para poder ver la página web en el navegador se tienen que abrir dos terminales en el proyecto, en uno se correra la app (npm start) y en el otro el servidor mock (json-server --watch characters.json --port 3004)
 
+El tamaño para celular lo tengo en width: 320px
+El tamaño para escritorio está en min-width: 1024px
+
+La aplicación está despligada en [netlify](https://deploy-preview-6--yaz-harry.netlify.app/). 
+
+---
 ## Scripts válidos
 
 En éste proyecto tu puedes correr los siguiente Scripts:
@@ -24,22 +30,32 @@ Corres el servidor para ver los datos de la app
 
 ### `npm test`
 
-
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
+---
 
 ## Extra
 
-• ¿Qué es lo que más te gustó de tu desarrollo?
-• Si hubieras tenido más tiempo ¿qué hubieras mejorado o qué más hubieras
-hecho?
-• Descríbenos un pain point o bug con el que te hayas encontrado y como lo
-solucionaste
+### ¿Qué es lo que más te gustó de tu desarrollo?
+
+Reforzar lo que he aprendido hasta ahora y agregarle nuevos conocimientos.
+Ademas que me gusta ver que se parece a lo que se me pidió y funciona!
+
+### Si hubieras tenido más tiempo ¿qué hubieras mejorado o qué más hubieras hecho?
+
++ Me hubiera gustado refactorizar para extraer en funciones, código repetido
++ Hacer las pruebas unitarias
++ Darle funcionalidad en el componente añadir personaje al link/boton de agregar imagen
++ Que los elementos en favoritos se mantengan despues de actualizar la página  
++ Agregar media query para tablet
+
+### Descríbenos un pain point o bug con el que te hayas encontrado y como lo solucionaste
+
+- Uno fué el agregar redux al proyecto ya que me resultaba enredado la estructura, como por ejemplo la carpeta store y sus elementos, en la cual el archivo hooks aun no lo entiendo del todo.\
+*Me apoyé de la documentación oficial de redux y otros ejemplos más*
+
+- Otro fué donde ubicar el json para que el server lo encontrara\
+*Lo coloqué donde server cargaba de default su archivo json si no encontraba uno*
+
+- De igual manera con las imagenes\
+*Me guié de ejemplos en linea*
