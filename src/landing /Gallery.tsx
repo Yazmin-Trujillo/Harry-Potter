@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Character, dataService } from '../services/DataService';
 import { ActionBar } from './ActionBar';
-import { AddCharacter } from './AddCharacter';
 import CharacterCard from './CharacterCard';
 import './Gallery.scss';
 
@@ -49,7 +48,6 @@ function Gallery() {
     return (
         <>
             <div className='gallery'>
-                {/* <div className='gallery'> */}
                 <img className="namePage" src='./images/Harry_Potter.png' alt="HarryPotter" />
                 <h4 className='instructions'>Selecciona tu filtro</h4>
                 <div className='categoryButtonContainer'>

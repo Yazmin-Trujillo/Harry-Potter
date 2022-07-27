@@ -572,16 +572,7 @@
       "actor": "Yazmin Trujillo",
       "alive": true,
       "image": ""
-    },
-    {
-      "name": "Yazmin Trujillo",
-      "dateOfBirth": "otro año",
-      "eyeColour": "blue",
-      "hairColour": "cafe",
-      "gender": "female",
-      "hogwartsStudent": false,
-      "hogwartsStaff": true,
-      "id": 2
-    }
+    }    
+   
   ]
 }
